@@ -5,6 +5,7 @@ class Email
 
   def initialize(to_address, subject, body)
     self.to_address   = to_address
+  #  self.to_address = "mr.lessard@gmail.com"
     self.subject      = subject
     self.body         = body
   end

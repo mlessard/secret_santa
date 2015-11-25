@@ -1,5 +1,6 @@
 require 'net/smtp'
 
+#need to rewrite the mailer class to use the new modern standard.
 class Emailer
 
   attr_accessor :smtp_server, :domain, :account_address, :account_password, :port
@@ -26,9 +27,9 @@ class Emailer
       
       print "sent!\n"
     else
-      puts "**Testing; not really mailing anything**\nEmail would be as follows:\n\n"
-      puts email.message
-      puts "======"
+      #puts "**Testing; not really mailing anything**\nEmail would be as follows:\n\n"
+      #puts email.message
+      #puts "======"
     end
   end
 end

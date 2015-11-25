@@ -1,14 +1,19 @@
 class Person
-  attr_accessor :name, :group, :email, :santa
+  attr_accessor :name, :group, :email, :santa, :exclude
 
   def initialize(attrs)
     self.name  = attrs["name"]
     self.group = attrs["group"]
     self.email = attrs["email"]
+    self.exclude = attrs["exclude"]
   end
 
   def can_be_santa_of?(other)
-    group != other.group
+    group_ = (group == other.group) 
+    exclude_ = (exclude != other.name) 
+    name_ = (name != other.name)
+
+    return (name_ && exclude_ && group_)
   end
 
   def can_swap_santas_with?(other)
